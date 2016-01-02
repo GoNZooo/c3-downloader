@@ -1,20 +1,10 @@
 # C3Downloader
 
-**TODO: Add description**
+Just a downloader for mp4s from the CCC.
 
-## Installation
+Supports simultaneous downloads:
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+`C3Downloader.Downloader.download_mp4s(url, path, chunk_size \\ 2)`
 
-  1. Add c3_downloader to your list of dependencies in `mix.exs`:
-
-        def deps do
-          [{:c3_downloader, "~> 0.0.1"}]
-        end
-
-  2. Ensure c3_downloader is started before your application:
-
-        def application do
-          [applications: [:c3_downloader]]
-        end
-
+The above function will split the list of mp4s into chunks the size
+of `chunk_size` and download each file in each chunk simultaneously.
